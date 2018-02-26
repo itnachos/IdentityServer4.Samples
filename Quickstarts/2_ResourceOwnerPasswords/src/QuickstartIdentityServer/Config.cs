@@ -29,7 +29,7 @@ namespace QuickstartIdentityServer
                     ClientId = "client",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
 
-                    ClientSecrets = 
+                    ClientSecrets =
                     {
                         new Secret("secret".Sha256())
                     },
@@ -42,9 +42,9 @@ namespace QuickstartIdentityServer
                     ClientId = "ro.client",
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
 
-                    ClientSecrets = 
+                    ClientSecrets =
                     {
-                        new Secret("secret".Sha256())
+                        new Secret("secret2".Sha256())
                     },
                     AllowedScopes = { "api1" }
                 }
@@ -66,6 +66,12 @@ namespace QuickstartIdentityServer
                     SubjectId = "2",
                     Username = "bob",
                     Password = "password"
+                },
+                new TestUser
+                {
+                    SubjectId = "17",
+                    Username = "seven",
+                    Password = "teen"
                 }
             };
         }

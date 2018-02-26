@@ -28,11 +28,22 @@ namespace QuickstartIdentityServer
                     ClientId = "client",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
 
-                    ClientSecrets = 
+                    ClientSecrets =
                     {
                         new Secret("secret".Sha256())
                     },
                     AllowedScopes = { "api1" }
+                },
+                new Client
+                {
+                    ClientId = "jim",
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+
+                    ClientSecrets =
+                    {
+                        new Secret("bob".Sha256())
+                    },
+                    AllowedScopes = { "api17" }
                 }
             };
         }

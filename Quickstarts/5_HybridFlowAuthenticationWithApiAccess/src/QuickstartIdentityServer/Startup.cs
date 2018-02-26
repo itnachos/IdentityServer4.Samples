@@ -31,6 +31,7 @@ namespace QuickstartIdentityServer
                     options.ClientId = "434483408261-55tc8n0cs4ff1fe21ea8df2o443v2iuc.apps.googleusercontent.com";
                     options.ClientSecret = "3gcoTrEDPPJ0ukn_aYYT6PWo";
                 })
+                /*
                 .AddOpenIdConnect("oidc", "OpenID Connect", options =>
                 {
                     options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
@@ -44,7 +45,25 @@ namespace QuickstartIdentityServer
                         NameClaimType = "name",
                         RoleClaimType = "role"
                     };
-                });
+                })*/
+                .AddOpenIdConnect("oidc", options =>
+                {
+                    options.SignInScheme = "Cookies";
+
+                    options.Authority = "http://localhost:5000";
+                    options.RequireHttpsMetadata = false;
+
+                    options.ClientId = "mvc";
+                    options.ClientSecret = "secret";
+                    options.ResponseType = "code id_token";
+
+                    options.SaveTokens = true;
+                    options.GetClaimsFromUserInfoEndpoint = true;
+
+                    options.Scope.Add("api1");
+                    options.Scope.Add("offline_access");
+                })
+                ;
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

@@ -66,6 +66,7 @@ namespace QuickstartIdentityServer
                     ClientId = "mvc",
                     ClientName = "MVC Client",
                     AllowedGrantTypes = GrantTypes.Implicit,
+                    //RequireConsent = false,
 
                     RedirectUris = { "http://localhost:5002/signin-oidc" },
                     PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
@@ -104,7 +105,20 @@ namespace QuickstartIdentityServer
                     Claims = new List<Claim>
                     {
                         new Claim("name", "Bob"),
-                        new Claim("website", "https://bob.com")
+                        new Claim("website", "https://bob.com"),
+                        new Claim("family_name", "Bob"),
+                        new Claim("given_name", "Bob"),
+                        new Claim("middle_name", "Bob"),
+                        new Claim("nickname", "Bob"),
+                        new Claim("preferred_username", "Bob"),
+                        new Claim("profile", "Bob"),
+                        new Claim("picture", "Bob"),
+                        new Claim("website", "Bob"),
+                        new Claim("gender", "Bob"),
+                        new Claim("birthdate", "Bob"),
+                        new Claim("zoneinfo", "Bob"),
+                        new Claim("locale", "Bob"),
+                        new Claim("updated_at", "Bob")
                     }
                 }
             };

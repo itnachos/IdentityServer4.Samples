@@ -14,7 +14,11 @@ namespace Api.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return new JsonResult(from c in User.Claims select new { c.Type, c.Value });
+            System.Diagnostics.Trace.WriteLine($"A user calls... {User}");
+
+            System.Console.WriteLine($"A user calls... {User}");
+
+            return new JsonResult(from c in User.Claims select new { c.Type , c.Value });
         }
     }
 }

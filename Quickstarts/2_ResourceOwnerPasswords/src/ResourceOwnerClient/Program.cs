@@ -24,8 +24,11 @@ namespace ResourceOwnerClient
             }
 
             // request token
-            var tokenClient = new TokenClient(disco.TokenEndpoint, "ro.client", "secret");
+            var tokenClient = new TokenClient(disco.TokenEndpoint, "ro.client", "secret2");
             var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("alice", "password", "api1");
+            //var tokenClient = new TokenClient(disco.TokenEndpoint, "client17", "secret17");
+            //var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("seven", "teen", "api17");
+            Console.WriteLine($"tokenClient {tokenClient}");
 
             if (tokenResponse.IsError)
             {

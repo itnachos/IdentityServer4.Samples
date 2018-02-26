@@ -13,7 +13,6 @@ namespace Api
             services.AddMvcCore()
                 .AddAuthorization()
                 .AddJsonFormatters();
-
             services.AddAuthentication("Bearer")
                 .AddIdentityServerAuthentication(options =>
                 {
